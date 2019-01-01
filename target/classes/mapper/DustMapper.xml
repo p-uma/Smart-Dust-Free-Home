@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="org.uci.iot.smarthome.dustSensor.dao.DustMapper">
+	<resultMap id="DustDetailsMap"
+		type="org.uci.iot.smarthome.dustSensor.vo.Dust">
+		<result column="DATE" property="date"></result>
+		<result column="DENSITY" property="density"></result>
+	</resultMap>
+
+  <insert id='insertData' parameterType='Dust' useGeneratedKeys='true' keyProperty='id'>
+    INSERT INTO DUST(DATE, DENSITY, TEMPERATURE, HUMIDITY, WIND)
+    VALUES(#{date}, #{density},#{temperature}, #{humidity}, #{wind})
+  </insert>
+  
+  <select id="getData" resultMap="DustDetailsMap">
+		select * from DUST where DATE &gt;= #{start} and DATE &lt;= #{end}
+  </select>
+</mapper>

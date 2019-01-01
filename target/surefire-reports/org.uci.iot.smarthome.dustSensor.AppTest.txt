@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.uci.iot.smarthome.dustSensor.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in org.uci.iot.smarthome.dustSensor.AppTest
